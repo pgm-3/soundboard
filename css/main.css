@@ -1,0 +1,63 @@
+/* Author: Frederick Roegiers <frederick.roegiers@arteveldehs.be> */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("../images/board.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+#themenav {
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#themenav a {
+  text-decoration: none;
+  color: orange;
+  font-weight: 800;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#themenav a.active,
+#themenav a:hover {
+  background-color: orange;
+  color: white;
+}
+
+#soundboard {
+  margin: 50px auto;
+  width: 70vw;
+  min-height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#soundboard .sample {
+  flex: 0 0 250px;
+  padding: 20px;
+  margin: 5px auto;
+  background: white;
+  border: 1px solid #54c5fd;
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#soundboard .sample:hover {
+  background-color: violet;
+  cursor: pointer;
+}
