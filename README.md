@@ -4,7 +4,7 @@ _"Oh... ik ben helemaal thuis"_ en _"Ik ben niet... verslaafd... aan den drank"_
 
 Maak een soundboard die door middel van de **Web Audio API** samples afspeelt in de browser als je op een item klikt.
 
-![Soundboard](./assets/soundboard.png?raw=true)
+![Soundboard](./.assets/soundboard.png?raw=true)
 
 De HTML & CSS is reeds voorbereid, enkel de interactieve kant ontbreekt nog...
 
