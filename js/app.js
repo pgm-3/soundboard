@@ -1,7 +1,9 @@
 const JSON_PATH = "./data/sounds.json";
 
 const AudioContext = window.AudioContext || window.webkitAudioContext;
-const groteKlok = new AudioContext();
+const audioCTX = new AudioContext();
+
+let audio;
 
 const app = {
   init() {
@@ -81,7 +83,8 @@ const app = {
     this.$soundboard.innerHTML = sampleBtns;
   },
   playSound(sample) {
-    const audio = new Audio(`./audio/${sample}.mp3`);
+    if (audio) audio.pause();
+    audio = new Audio(`./audio/${sample}.mp3`);
     const mediaElement = audioCTX.createMediaElementSource(audio);
     mediaElement.connect(audioCTX.destination);
     audio.play();
