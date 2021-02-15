@@ -1,9 +1,7 @@
 const JSON_PATH = "./data/sounds.json";
 
 const AudioContext = window.AudioContext || window.webkitAudioContext;
-const audioCTX = new AudioContext();
-
-let audio;
+const groteKlok = new AudioContext();
 
 const app = {
   init() {
@@ -72,9 +70,9 @@ const app = {
     const sampleBtns = sounds
       .map((sample) => {
         let niceSample = sample; // store in temp var
-        niceSample = niceSample.split(`${this.currentTheme}-`); // split on category
-        niceSample = niceSample[1]; // only interested in last part of the array
-        niceSample = niceSample.split("-").join(" "); // split on dash, join with space
+        niceSample = niceSample.split(`${this.currentTheme}-`);
+        niceSample = niceSample[1];
+        niceSample = niceSample.split("-").join(" ");
 
         return `<button class="sample" data-id="${sample}">${niceSample}</button>`;
       })
@@ -83,8 +81,7 @@ const app = {
     this.$soundboard.innerHTML = sampleBtns;
   },
   playSound(sample) {
-    if (audio) audio.pause();
-    audio = new Audio(`./audio/${sample}.mp3`);
+    const audio = new Audio(`./audio/${sample}.mp3`);
     const mediaElement = audioCTX.createMediaElementSource(audio);
     mediaElement.connect(audioCTX.destination);
     audio.play();
